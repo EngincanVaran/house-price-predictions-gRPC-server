@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package houseprice;
+
+service HousePricePredictor {
+  rpc PredictPrice (HouseFeatures) returns (PricePrediction) {}
+}
+
+message HouseFeatures {
+  float MedInc = 1;
+  float HouseAge = 2;
+  float AveRooms = 3;
+  float AveBedrms = 4;
+  float Population = 5;
+  float AveOccup = 6;
+  float Latitude = 7;
+  float Longitude = 8;
+}
+
+message PricePrediction {
+  float predictedPrice = 1;
+}
